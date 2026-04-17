@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisors - Enamul Haq Rana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 60px 0 40px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .page-hero p  { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .supervisors-section { padding: 70px 0; background: #f5f5f5; min-height: 60vh; }
+
+        .supervisors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+            margin-top: 20px;
+        }
+
+        /* CARD */
+        .supervisor-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .supervisor-card:nth-child(1) { animation-delay: 0.1s; }
+        .supervisor-card:nth-child(2) { animation-delay: 0.2s; }
+        .supervisor-card:nth-child(3) { animation-delay: 0.3s; }
+        .supervisor-card:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+        .supervisor-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+
+        /* CARD TOP */
+        .card-top {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            padding: 35px 30px 30px;
+            text-align: center;
+            position: relative;
+        }
+        .card-top::after {
+            content:''; position:absolute; bottom:0; left:0; right:0;
+            height:30px; background:white;
+            border-radius: 50% 50% 0 0 / 30px 30px 0 0;
+        }
+        .supervisor-type-badge {
+            position: absolute; top:15px; right:15px;
+            background: rgba(255,255,255,0.25); color: white;
+            font-size: 0.75rem; font-weight: 700;
+            padding: 4px 12px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.4); z-index:2;
+        }
+
+        /* PHOTO */
+        .supervisor-photo-wrap {
+            width:120px; height:120px; border-radius:50%;
+            border:4px solid white; box-shadow:0 5px 20px rgba(0,0,0,0.25);
+            margin:0 auto 12px; overflow:hidden;
+            background:rgba(255,255,255,0.2);
+            display:flex; align-items:center; justify-content:center;
+            position:relative; z-index:1;
+        }
+        .supervisor-photo-wrap img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+        .supervisor-photo-wrap .placeholder-icon { font-size:3.5rem; color:rgba(255,255,255,0.85); }
+
+        .supervisor-name { color:white; font-size:1.35rem; font-weight:700; position:relative; z-index:1; }
+
+        /* SOCIAL ICONS ROW */
+        .social-icon-row {
+            display:flex; justify-content:center; gap:10px;
+            margin-top:12px; position:relative; z-index:1;
+        }
+        .social-icon-btn {
+            width:36px; height:36px; border-radius:50%;
+            background:rgba(255,255,255,0.2);
+            border:1px solid rgba(255,255,255,0.4);
+            color:white; display:inline-flex;
+            align-items:center; justify-content:center;
+            font-size:0.95rem; text-decoration:none;
+            transition:all 0.25s;
+        }
+        .social-icon-btn:hover {
+            background:white; color:#1a2980;
+            transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* CARD BODY */
+        .card-body { padding: 22px 28px 28px; }
+
+        .supervisor-role {
+            display:inline-flex; align-items:center; gap:8px;
+            background:linear-gradient(135deg,#1a2980,#26d0ce);
+            color:white; padding:5px 15px; border-radius:20px;
+            font-size:0.83rem; font-weight:600; margin-bottom:18px;
+        }
+
+        .info-group { margin-bottom:15px; }
+        .info-label {
+            font-size:0.72rem; font-weight:700; letter-spacing:1.5px;
+            text-transform:uppercase; color:#3498db; margin-bottom:5px;
+        }
+        .info-value { font-size:0.93rem; color:#555; line-height:1.6; }
+        .info-value i, .info-value .ai { color:#3498db; margin-right:7px; width:16px; text-align:center; }
+
+        .research-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:5px; }
+        .research-tag {
+            background:#eaf4fb; color:#1a2980;
+            padding:3px 11px; border-radius:20px;
+            font-size:0.78rem; font-weight:500; border:1px solid #c5e3f5;
+        }
+
+        .divider { height:1px; background:#eee; margin:15px 0; }
+
+        /* CONTACT BUTTONS */
+        .contact-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+        .contact-link {
+            display:inline-flex; align-items:center; gap:6px;
+            padding:8px 15px; border-radius:8px;
+            text-decoration:none; font-size:0.82rem; font-weight:600;
+            transition:all 0.25s;
+        }
+        .contact-link.email   { background:#eaf4fb; color:#1a2980; border:1px solid #c5e3f5; }
+        .contact-link.email:hover   { background:#1a2980; color:white; }
+        .contact-link.phone   { background:#e8f8f5; color:#16a085; border:1px solid #b8e8dd; }
+        .contact-link.phone:hover   { background:#16a085; color:white; }
+        .contact-link.scholar { background:#fce8e8; color:#c0392b; border:1px solid #f5c6c6; }
+        .contact-link.scholar:hover { background:#c0392b; color:white; }
+        .contact-link.website { background:#fef9e7; color:#d68910; border:1px solid #fce8b2; }
+        .contact-link.website:hover { background:#d68910; color:white; }
+
+        /* INFO BANNER */
+        .info-banner {
+            background:linear-gradient(135deg,#eaf4fb,#e8f5e9);
+            border-left:5px solid #3498db; border-radius:10px;
+            padding:18px 22px; margin-bottom:45px;
+            display:flex; align-items:center; gap:15px;
+            color:#2c3e50; font-size:0.98rem;
+        }
+        .info-banner i { font-size:1.7rem; color:#3498db; flex-shrink:0; }
+
+        @media (max-width:768px) {
+            .page-hero h1 { font-size:2rem; }
+            .supervisors-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enamul Haq Rana</a>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="supervisors.html" class="active">Supervisors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-user-tie" style="margin-right:15px;"></i>My Supervisors</h1>
+            <p>Meet the distinguished academics guiding my research journey</p>
+        </div>
+    </div>
+
+    <section class="supervisors-section">
+        <div class="container">
+
+            <div class="info-banner">
+                <i class="fas fa-info-circle"></i>
+                <p>The following faculty members are supervising my academic and research work. I am grateful for their invaluable guidance and mentorship throughout my research career.</p>
+            </div>
+
+            <div class="supervisors-grid">
+
+                <!-- ===========================
+                     SUPERVISOR 1 (Main)
+                     =========================== -->
+                <div class="supervisor-card">
+                    <div class="card-top">
+                        <span class="supervisor-type-badge">Main Supervisor</span>
+
+                        <div class="supervisor-photo-wrap">
+                            <!--
+                                PHOTO যোগ করতে: নিচের লাইনের <!-- --> সরিয়ে দিন
+                                এবং সঠিক image path দিন, যেমন: assets/images/sup1.jpg
+                            -->
+                            <!-- <img src="assets/images/supervisor1.jpg" alt="Supervisor 1 Photo"> -->
+                            <i class="fas fa-user-circle placeholder-icon"></i>
+                        </div>
+
+                        <div class="supervisor-name">Prof. Dr. [Supervisor Name]</div>
+
+                        <div class="social-icon-row">
+                            <a href="https://linkedin.com/in/CHANGE_THIS" target="_blank" class="social-icon-btn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" class="social-icon-btn" title="ORCID">
+                                <i class="ai ai-orcid"></i>
+                            </a>
+                            <a href="https://researchgate.net/profile/CHANGE_THIS" target="_blank" class="social-icon-btn" title="ResearchGate">
+                                <i class="ai ai-researchgate"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="social-icon-btn" title="Google Scholar">
+                                <i class="ai ai-google-scholar"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="supervisor-role"><i class="fas fa-briefcase"></i> Professor</span>
+
+                        <div class="info-group">
+                            <div class="info-label">Department & Institution</div>
+                            <div class="info-value"><i class="fas fa-university"></i> Department of Zoology, University of Rajshahi</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Research Interests</div>
+                            <div class="research-tags">
+                                <span class="research-tag">Computational Biology</span>
+                                <span class="research-tag">Bioinformatics</span>
+                                <span class="research-tag">Molecular Biology</span>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Contact</div>
+                            <div class="info-value"><i class="fas fa-envelope"></i> supervisor1@ru.ac.bd</div>
+                            <div class="info-value" style="margin-top:6px;"><i class="fas fa-phone"></i> +880-XXXXXXXXXX</div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="mailto:supervisor1@ru.ac.bd" class="contact-link email"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="tel:+880XXXXXXXXXX" class="contact-link phone"><i class="fas fa-phone"></i> Call</a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="contact-link scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
+                            <a href="#" target="_blank" class="contact-link website"><i class="fas fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ===========================
+                     SUPERVISOR 2 (Co-Supervisor)
+                     =========================== -->
+                <div class="supervisor-card">
+                    <div class="card-top">
+                        <span class="supervisor-type-badge">Co-Supervisor</span>
+
+                        <div class="supervisor-photo-wrap">
+                            <!-- <img src="assets/images/supervisor2.jpg" alt="Supervisor 2 Photo"> -->
+                            <i class="fas fa-user-circle placeholder-icon"></i>
+                        </div>
+
+                        <div class="supervisor-name">Prof. Dr. [Supervisor Name]</div>
+
+                        <div class="social-icon-row">
+                            <a href="https://linkedin.com/in/CHANGE_THIS" target="_blank" class="social-icon-btn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" class="social-icon-btn" title="ORCID">
+                                <i class="ai ai-orcid"></i>
+                            </a>
+                            <a href="https://researchgate.net/profile/CHANGE_THIS" target="_blank" class="social-icon-btn" title="ResearchGate">
+                                <i class="ai ai-researchgate"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="social-icon-btn" title="Google Scholar">
+                                <i class="ai ai-google-scholar"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="supervisor-role"><i class="fas fa-briefcase"></i> Associate Professor</span>
+
+                        <div class="info-group">
+                            <div class="info-label">Department & Institution</div>
+                            <div class="info-value"><i class="fas fa-university"></i> Department of Biochemistry, University of Rajshahi</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Research Interests</div>
+                            <div class="research-tags">
+                                <span class="research-tag">Drug Design</span>
+                                <span class="research-tag">Cheminformatics</span>
+                                <span class="research-tag">Molecular Dynamics</span>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Contact</div>
+                            <div class="info-value"><i class="fas fa-envelope"></i> supervisor2@ru.ac.bd</div>
+                            <div class="info-value" style="margin-top:6px;"><i class="fas fa-phone"></i> +880-XXXXXXXXXX</div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="mailto:supervisor2@ru.ac.bd" class="contact-link email"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="tel:+880XXXXXXXXXX" class="contact-link phone"><i class="fas fa-phone"></i> Call</a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="contact-link scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
+                            <a href="#" target="_blank" class="contact-link website"><i class="fas fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ================================
+                     SUPERVISOR 3 (External)
+                     ================================ -->
+                <div class="supervisor-card">
+                    <div class="card-top">
+                        <span class="supervisor-type-badge">External Supervisor</span>
+
+                        <div class="supervisor-photo-wrap">
+                            <!-- <img src="assets/images/supervisor3.jpg" alt="Supervisor 3 Photo"> -->
+                            <i class="fas fa-user-circle placeholder-icon"></i>
+                        </div>
+
+                        <div class="supervisor-name">Prof. Dr. [Supervisor Name]</div>
+
+                        <div class="social-icon-row">
+                            <a href="https://linkedin.com/in/CHANGE_THIS" target="_blank" class="social-icon-btn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" class="social-icon-btn" title="ORCID">
+                                <i class="ai ai-orcid"></i>
+                            </a>
+                            <a href="https://researchgate.net/profile/CHANGE_THIS" target="_blank" class="social-icon-btn" title="ResearchGate">
+                                <i class="ai ai-researchgate"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="social-icon-btn" title="Google Scholar">
+                                <i class="ai ai-google-scholar"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <span class="supervisor-role"><i class="fas fa-briefcase"></i> Professor</span>
+
+                        <div class="info-group">
+                            <div class="info-label">Department & Institution</div>
+                            <div class="info-value"><i class="fas fa-university"></i> Department of Pharmacy, [University Name]</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Research Interests</div>
+                            <div class="research-tags">
+                                <span class="research-tag">Phytochemistry</span>
+                                <span class="research-tag">Machine Learning</span>
+                                <span class="research-tag">Deep Learning</span>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="info-group">
+                            <div class="info-label">Contact</div>
+                            <div class="info-value"><i class="fas fa-envelope"></i> supervisor3@university.ac.bd</div>
+                            <div class="info-value" style="margin-top:6px;"><i class="fas fa-phone"></i> +880-XXXXXXXXXX</div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="mailto:supervisor3@university.ac.bd" class="contact-link email"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="tel:+880XXXXXXXXXX" class="contact-link phone"><i class="fas fa-phone"></i> Call</a>
+                            <a href="https://scholar.google.com/citations?user=CHANGE_THIS" target="_blank" class="contact-link scholar"><i class="ai ai-google-scholar"></i> Scholar</a>
+                            <a href="#" target="_blank" class="contact-link website"><i class="fas fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    ✅ আরো supervisor যোগ করতে চাইলে:
+                    উপরের একটা পুরো supervisor-card ব্লক copy করুন,
+                    এখানে paste করুন এবং তথ্য পরিবর্তন করুন।
+                -->
+
+            </div><!-- END supervisors-grid -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Enamul Haq Rana</a>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="cv.html">CV</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="supervisors.html">Supervisors</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Enamul Haq Rana. All rights reserved.</p>
+                <p style="margin-top:10px; color:#aaa;">Graduate Research Assistant | Department of Zoology | University of Rajshahi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.innerHTML = navMenu.classList.contains('active')
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

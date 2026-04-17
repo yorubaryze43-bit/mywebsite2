@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Enamul Haq Rana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enamul Haq Rana</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="supervisors.html">Supervisors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="publications-container">
+        <div class="container">
+            <h1>Publications</h1>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="journal">Journal Articles</button>
+                <button class="filter-btn" data-filter="conference">Conference Papers</button>
+                <button class="filter-btn" data-filter="book">Book Chapters</button>
+            </div>
+
+            <div class="publications-list">
+
+                <div class="publication-item" data-category="conference">
+                    <div class="pub-header">
+                        <span class="pub-type">Conference Paper</span>
+                        <span class="pub-year">2025</span>
+                    </div>
+                    <h3>"Bio-efficacy of Duranta repens (L.) leaf Extracts Through Insect Dose-mortality, Cytotoxic, Larvicidal and Antimicrobial Activity Tests under Laboratory Conditions"</h3>
+                    <p class="authors">Suzzada Suhi, Enamul Haq Rana, Md. Fazlay Rabbi, N. J. Nusa, A. Khanam, M. Majumder, Nurul Islam</p>
+                    <p class="journal">3rd International Conference on Advancement of Life Sciences, Mawlana Bhashani Science and Technology University, Bangladesh</p>
+                    <div class="pub-links">
+                        <a href="https://www.researchgate.net/publication/388127549_Bio-efficacy_of_Duranta_repens_L_leaf_Extracts_Through_Insect_Dose-mortality_Cytotoxic_Larvicidal_and_Antimicrobial_Activity_Tests_under_Laboratory_Conditions" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication-item" data-category="conference">
+                    <div class="pub-header">
+                        <span class="pub-type">Conference Paper</span>
+                        <span class="pub-year">2024</span>
+                    </div>
+                    <h3>"Screening of bio-potency for the Ixora coccinea L. leaves and flowers extracts through antimicrobial, cytotoxic, larvicidal and insect repellent activities under laboratory conditions"</h3>
+                    <p class="authors">Suzzada Suhi, Md. Ariful Islam, Enamul Haq Rana, Samit Bin Rahman, M. M. Shraboni, Alima Khanam, Samama Begum Chhabi, Nurul Islam</p>
+                    <p class="journal">International Conference on Advances and Challenges through Translational Research in Biological Sciences, University of Rajshahi, Bangladesh</p>
+                    <div class="pub-links">
+                        <a href="https://www.researchgate.net/publication/380150570_Screening_of_bio-potency_for_the_Ixora_coccinea_L_leaves_and_flowers_extracts_through_antimicrobial_cytotoxic_larvicidal_and_insect_repellent_activities_under_laboratory_conditions" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication-item" data-category="conference">
+                    <div class="pub-header">
+                        <span class="pub-type">Conference Paper</span>
+                        <span class="pub-year">2023</span>
+                    </div>
+                    <h3>"Dose-mortality, repellency, cytotoxicity and antimicrobial activities of Dracaena fragrans (L.) leaf extracts against selected storage insect pests, brine shrimp nauplii and bacteria & fungi"</h3>
+                    <p class="authors">Suzzada Suhi, Enamul Haq Rana, Samit Bin Rahman, Alima Khanam, M. M. Shraboni, Nurul Islam</p>
+                    <p class="journal">BCSIR Congress 2023, Dhaka, Bangladesh</p>
+                    <div class="pub-links">
+                        <a href="https://www.researchgate.net/publication/379477755_Dose-mortality_repellency_cytotoxicity_and_antimicrobial_activities_of_Dracaena_fragrans_L_leaf_extracts_against_selected_storage_insect_pests_brine_shrimp_nauplii_and_bacteria_fungi" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Paper</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="add-publication">
+                <button id="addPubBtn" class="btn secondary-btn">
+                    <i class="fas fa-plus"></i> Add New Publication
+                </button>
+                
+                <div id="pubForm" class="publication-form" style="display: none;">
+                    <h3>Add New Publication</h3>
+                    <form>
+                        <input type="text" placeholder="Title" required>
+                        <input type="text" placeholder="Authors" required>
+                        <input type="text" placeholder="Journal/Conference" required>
+                        <input type="number" placeholder="Year" required>
+                        <select>
+                            <option value="journal">Journal Article</option>
+                            <option value="conference">Conference Paper</option>
+                            <option value="book">Book Chapter</option>
+                        </select>
+                        <button type="submit" class="btn primary-btn">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Enamul Haq Rana</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
