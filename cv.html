@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - YOUR NAME</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">YOUR NAME</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="supervisors.html">Supervisors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="cv-container">
+        <div class="container">
+            <div class="cv-header">
+                <h1>Curriculum Vitae</h1>
+                <div class="cv-actions">
+                    <a href="assets/documents/cv.pdf" download class="btn primary-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <button onclick="window.print()" class="btn secondary-btn">
+                        <i class="fas fa-print"></i> Print CV
+                    </button>
+                </div>
+            </div>
+
+            <section class="cv-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="cv-item">
+                    <h3>Ph.D. in [Your Field]</h3>
+                    <p class="institution">[University Name], [City, Country]</p>
+                    <p class="date">2018 - 2022</p>
+                    <p>Thesis: "[Your Thesis Title]"</p>
+                </div>
+                <div class="cv-item">
+                    <h3>M.Sc. in [Your Field]</h3>
+                    <p class="institution">[University Name], [City, Country]</p>
+                    <p class="date">2016 - 2018</p>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                <div class="cv-item">
+                    <h3>[Your Current Position]</h3>
+                    <p class="institution">[Company/Institution Name], [City, Country]</p>
+                    <p class="date">2022 - Present</p>
+                    <ul>
+                        <li>Responsibility or achievement 1</li>
+                        <li>Responsibility or achievement 2</li>
+                        <li>Responsibility or achievement 3</li>
+                    </ul>
+                </div>
+                <div class="cv-item">
+                    <h3>[Previous Position]</h3>
+                    <p class="institution">[Company/Institution Name], [City, Country]</p>
+                    <p class="date">2020 - 2022</p>
+                    <ul>
+                        <li>Responsibility or achievement 1</li>
+                        <li>Responsibility or achievement 2</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2><i class="fas fa-tools"></i> Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>Skill 1 <span class="skill-level">Expert</span></li>
+                            <li>Skill 2 <span class="skill-level">Advanced</span></li>
+                            <li>Skill 3 <span class="skill-level">Intermediate</span></li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>English <span class="skill-level">Fluent</span></li>
+                            <li>Spanish <span class="skill-level">Intermediate</span></li>
+                            <li>French <span class="skill-level">Basic</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> YOUR NAME</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
